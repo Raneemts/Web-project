@@ -35,63 +35,43 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تسجيل دخول المشرف - اكتشف السعودية</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>تسجيل دخول المشرف</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
+<body class="login-page-bg">
 
-<nav class="admin-navbar">
-    <span class="brand">لوحة المشرف</span>
-    <nav>
+<nav class="admin-nav">
+    <span>لوحة المشرف</span>
+    <div>
         <a href="../index.php">زيارة الموقع</a>
         <a href="../index.php">الصفحة الأولى</a>
-    </nav>
+    </div>
 </nav>
 
-<div class="login-page">
+<div class="login-center">
     <div class="login-box">
         <h2>تسجيل دخول المشرف</h2>
 
-        <?php if (!empty($error)): ?>
-            <div class="alert alert-error"><?= htmlspecialchars($error) ?></div>
+        <?php if ($error): ?>
+            <div class="alert-error"><?= htmlspecialchars($error) ?></div>
         <?php endif; ?>
 
         <form method="POST">
             <div class="form-group">
-                <label for="username">اسم المستخدم</label>
-                <input
-                    type="text"
-                    id="username"
-                    name="username"
-                    class="form-control"
-                    placeholder="مثال: admin"
-                    value="<?= htmlspecialchars($_POST['username'] ?? '') ?>"
-                    required
-                >
+                <label>اسم المستخدم</label>
+                <input type="text" name="username"
+                       placeholder="مثال: admin"
+                       value="<?= htmlspecialchars($_POST['username'] ?? '') ?>">
             </div>
             <div class="form-group">
-                <label for="password">كلمة المرور</label>
-                <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    class="form-control"
-                    placeholder="••••••••"
-                    required
-                >
+                <label>كلمة المرور</label>
+                <input type="password" name="password" placeholder="••••••••">
             </div>
             <button type="submit" class="btn-submit">دخول</button>
         </form>
-
-        <p style="text-align:center; margin-top:15px; font-size:0.8rem; color:#999;">
-            بيانات الدخول الافتراضية: admin / admin123
-        </p>
     </div>
 </div>
 
-<script src="../js/main.js"></script>
 </body>
 </html>
