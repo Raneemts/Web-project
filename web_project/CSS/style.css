@@ -1,6 +1,8 @@
 /* ===== ROOT VARIABLES ===== */
 :root {
     --green: #2d6a4f;
+    --green-light: #52b788;
+    --green-dark: #1b4332;
     --gold: #b5943a;
     --bg: #f9f9f9;
     --text: #222;
@@ -8,7 +10,6 @@
     --nav-bg: #2d6a4f;
 }
 
-/* ===== NIGHT MODE ===== */
 body.night {
     --bg: #1a1a2e;
     --text: #eee;
@@ -19,14 +20,16 @@ body.night {
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
     direction: rtl;
     background: var(--bg);
     color: var(--text);
-    transition: all 0.3s;
+    transition: background 0.3s, color 0.3s;
 }
 
-/* NAVBAR */
+/* ===========================
+   PUBLIC NAVBAR
+=========================== */
 nav {
     background: var(--nav-bg);
     padding: 15px 30px;
@@ -34,11 +37,53 @@ nav {
     justify-content: space-between;
     align-items: center;
 }
-nav a { color: white; text-decoration: none; margin: 0 15px; }
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 12px;
+    font-size: 0.95rem;
+}
 nav a:hover { color: var(--gold); }
 .logo { color: white; font-size: 1.4rem; font-weight: bold; }
 
-/* NIGHT MODE BUTTON */
+/* ===========================
+   ADMIN NAVBAR
+=========================== */
+.admin-nav {
+    background: #2d6a4f;
+    padding: 13px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    direction: rtl;
+}
+.admin-brand {
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.admin-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-direction: row-reverse;
+}
+.admin-nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 0.88rem;
+    padding: 7px 15px;
+    border-radius: 5px;
+    transition: opacity 0.2s;
+    background: rgba(255,255,255,0.15);
+}
+.admin-nav-link:hover { opacity: 0.85; }
+.admin-btn-add { background: #1b4332; }
+.admin-btn-logout { background: #dc3545; }
+
+/* ===========================
+   NIGHT MODE BUTTON
+=========================== */
 #nightBtn {
     background: var(--gold);
     border: none;
@@ -46,9 +91,12 @@ nav a:hover { color: var(--gold); }
     padding: 8px 16px;
     border-radius: 20px;
     cursor: pointer;
+    font-family: inherit;
 }
 
-/* CARDS */
+/* ===========================
+   CARDS
+=========================== */
 .card {
     background: var(--card-bg);
     border-radius: 12px;
@@ -61,7 +109,9 @@ nav a:hover { color: var(--gold); }
 .card img { width: 100%; height: 200px; object-fit: cover; }
 .card-body { padding: 15px; }
 
-/* GRID */
+/* ===========================
+   GRID
+=========================== */
 .grid-3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -69,11 +119,13 @@ nav a:hover { color: var(--gold); }
     padding: 30px;
 }
 
-/* SUCCESS/ERROR MESSAGES */
+/* ===========================
+   ALERTS
+=========================== */
 .alert-success {
     background: #d4edda;
     color: #155724;
-    padding: 15px;
+    padding: 14px 20px;
     border-radius: 8px;
     margin: 15px 0;
     border: 1px solid #c3e6cb;
@@ -81,32 +133,112 @@ nav a:hover { color: var(--gold); }
 .alert-error {
     background: #f8d7da;
     color: #721c24;
-    padding: 15px;
+    padding: 14px 20px;
     border-radius: 8px;
     margin: 15px 0;
+    border: 1px solid #f5c6cb;
 }
 
-/* FORMS */
+/* ===========================
+   LOGIN PAGE
+=========================== */
+.login-page-bg { background: #f0f0f0; }
+.login-center {
+    min-height: calc(100vh - 60px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+.login-box {
+    background: white;
+    padding: 35px 30px;
+    border-radius: 10px;
+    width: 380px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+.login-box h2 {
+    text-align: center;
+    background: var(--green);
+    color: white;
+    padding: 14px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+}
+.btn-submit {
+    width: 100%;
+    background: var(--green);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: inherit;
+    margin-top: 5px;
+}
+.btn-submit:hover { background: var(--green-dark); }
+
+/* ===========================
+   FORMS
+=========================== */
 .form-container {
-    max-width: 600px;
-    margin: 40px auto;
+    max-width: 620px;
+    margin: 35px auto;
     background: var(--card-bg);
-    padding: 30px;
+    padding: 35px 30px;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
-.form-group { margin-bottom: 20px; }
-.form-group label { display: block; margin-bottom: 8px; font-weight: bold; }
+.form-title {
+    text-align: center;
+    font-size: 1.3rem;
+    color: var(--green);
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+.form-group { margin-bottom: 18px; }
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #444;
+}
 .form-group input,
 .form-group textarea,
 .form-group select {
     width: 100%;
-    padding: 10px;
+    padding: 10px 12px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    font-size: 1rem;
+    font-size: 0.95rem;
+    font-family: inherit;
     direction: rtl;
+    background: var(--card-bg);
+    color: var(--text);
 }
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--green);
+}
+.form-group textarea { resize: vertical; min-height: 100px; }
+
+.section-title {
+    font-size: 1rem;
+    color: var(--green);
+    font-weight: bold;
+    margin: 20px 0 12px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 6px;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
 .btn-green {
     background: var(--green);
     color: white;
@@ -115,41 +247,106 @@ nav a:hover { color: var(--gold); }
     border-radius: 8px;
     cursor: pointer;
     font-size: 1rem;
+    font-family: inherit;
     width: 100%;
+    margin-top: 5px;
 }
-.btn-red {
+.btn-green:hover { background: var(--green-dark); }
+
+.btn-add {
+    background: var(--green);
+    color: white;
+    padding: 8px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+.btn-add:hover { background: var(--green-dark); }
+
+/* ===========================
+   ACTION BUTTONS
+=========================== */
+.action-btns {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+}
+.btn-edit {
+    background: var(--green);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-family: inherit;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+.btn-edit:hover { background: var(--green-dark); }
+
+.btn-delete {
     background: #dc3545;
     color: white;
-    padding: 6px 14px;
+    padding: 5px 12px;
     border: none;
-    border-radius: 6px;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 0.82rem;
+    font-family: inherit;
 }
-.btn-blue {
-    background: #007bff;
+.btn-delete:hover { background: #b02a37; }
+
+/* ===========================
+   ADMIN TABLE
+=========================== */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+.admin-table th,
+.admin-table td {
+    padding: 12px 15px;
+    text-align: right;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+}
+.admin-table th {
+    background: var(--green);
     color: white;
-    padding: 6px 14px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    text-decoration: none;
+    font-size: 0.95rem;
 }
-
-/* TABLE */
-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-th, td { padding: 12px; text-align: right; border-bottom: 1px solid #ddd; }
-th { background: var(--green); color: white; }
-
-/* FOOTER */
-footer {
+.admin-table tr:last-child td { border-bottom: none; }
+.admin-table tr:hover td { background: #f5f5f5; }
+.empty-table {
     text-align: center;
-    padding: 20px;
-    background: var(--nav-bg);
-    color: white;
-    margin-top: 40px;
+    padding: 30px;
+    color: #999;
 }
 
-/* FILTER BAR */
+/* ===========================
+   ADMIN CONTENT
+=========================== */
+.admin-content {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+.page-title { text-align: center; margin-bottom: 20px; }
+.page-title h1 { font-size: 1.8rem; }
+.page-title p { color: #666; font-size: 0.9rem; margin-top: 8px; }
+
+/* ===========================
+   FILTER BAR
+=========================== */
 .filter-bar {
     display: flex;
     gap: 10px;
@@ -163,12 +360,32 @@ footer {
     color: var(--green);
     border-radius: 20px;
     cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9rem;
 }
-.filter-btn.active {
-    background: var(--green);
+.filter-btn.active,
+.filter-btn:hover { background: var(--green); color: white; }
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--nav-bg);
     color: white;
+    margin-top: 40px;
+    font-size: 0.9rem;
 }
 
+/* ===========================
+   RESPONSIVE
+=========================== */
 @media (max-width: 768px) {
     .grid-3 { grid-template-columns: 1fr; }
+    .form-container { margin: 15px; padding: 20px; }
+    .login-box { width: 100%; }
+    .admin-content { padding: 0 15px; }
+    .admin-nav { flex-direction: column; gap: 10px; }
+    .admin-nav-links { flex-direction: column; }
 }
