@@ -9,7 +9,7 @@ $stmt->execute();
 $region = $stmt->get_result()->fetch_assoc();
 if (!$region) die('السجل غير موجود');
 
-// ✅ هذا السطر هو الإصلاح
+//  هذا السطر هو الإصلاح
 $data = $region;
 $error = '';
 
