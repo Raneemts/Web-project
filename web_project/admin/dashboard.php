@@ -80,10 +80,10 @@ $regions = $conn->query("SELECT * FROM regions ORDER BY id ASC")->fetch_all(MYSQ
                     <td colspan="5" class="empty-table">لا توجد سجلات بعد</td>
                 </tr>
             <?php endif; ?>
-
+            <?php $counter = 1; ?>
             <?php foreach ($regions as $r): ?>
             <tr>
-                <td><?= $r['id'] ?></td>
+                <td><?= $counter++ ?></td>
                 <td><?= htmlspecialchars($r['name']) ?></td>
                 <td><?= htmlspecialchars($r['category']) ?></td>
                 <td><?= htmlspecialchars(mb_substr($r['description'], 0, 40)) ?>...</td>
