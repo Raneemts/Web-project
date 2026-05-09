@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 06, 2026 at 07:11 PM
+-- Host: 127.0.0.1:3307
+-- Generation Time: May 09, 2026 at 01:45 PM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- PHP Version: 8.1.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -67,11 +67,9 @@ CREATE TABLE `regions` (
 --
 
 INSERT INTO `regions` (`id`, `name`, `category`, `description`, `location`, `features`, `activities`, `landmarks`, `main_image`, `gallery_image1`, `gallery_image2`, `gallery_image3`, `created_at`) VALUES
-(1, 'الرياض', 'وسط', 'عاصمة المملكة العربية السعودية ومركزها الاقتصادي', 'وسط المملكة', 'برج المملكة، قصر المصمك', 'زيارة المتاحف، التسوق', 'برج الفيصلية، قصر المصمك', 'riyadh.jpg', NULL, NULL, NULL, '2026-05-05 21:15:29'),
-(2, 'مكة المكرمة', 'غربية', 'مدينة دينية يقصدها المسلمون للحج', 'غرب المملكة', 'المسجد الحرام، الكعبة المشرفة', 'العبادة، الطواف', 'الكعبة المشرفة، مسعى الصفا والمروة', 'makkah.jpg', NULL, NULL, NULL, '2026-05-05 21:15:29'),
-(3, '<br /><b>Warning</b>:  Undefined variable $data in <b>C:\\xampp\\htdocs\\web_project\\admin\\update.php</', 'وسطى', '<br />\r\n<b>Warning</b>:  Undefined variable $data in <b>C:\\xampp\\htdocs\\web_project\\admin\\update.php</b> on line <b>124</b><br />\r\n<br />\r\n<b>Warning</b>:  Trying to access array offset on value of type null in <b>C:\\xampp\\htdocs\\web_project\\admin\\update.php</b> on line <b>124</b><br />', '', '', '', '', '69fb43adbb40a.jpg', NULL, NULL, NULL, '2026-05-05 21:15:29'),
-(4, '<br /><b>Warning</b>:  Undefined variable $data in <b>C:\\xampp\\htdocs\\web_project\\admin\\update.php</', 'وسطى', '<br />\r\n<b>Warning</b>:  Undefined variable $data in <b>C:\\xampp\\htdocs\\web_project\\admin\\update.php</b> on line <b>124</b><br />\r\n<br />\r\n<b>Warning</b>:  Trying to access array offset on value of type null in <b>C:\\xampp\\htdocs\\web_project\\admin\\update.php</b> on line <b>124</b><br />', '', '', '', '', '69fb456670e74.png', NULL, NULL, NULL, '2026-05-06 13:43:02'),
-(5, 'الدمام', 'شرقية', 'الدمام فيها بحر', 'شرق المملكة العربية السعودية', 'فيها بحر', 'زيارة البحر', 'بحر', '69fb49e2d02b4.png', NULL, NULL, NULL, '2026-05-06 14:02:10');
+(1, 'الرياض', 'وسط', 'عاصمة المملكة العربية السعودية ومركزها الاقتصادي', 'وسط المملكة', 'برج المملكة، قصر المصمك', 'زيارة المتاحف، التسوق', 'برج الفيصلية، قصر المصمك', '69ff1cc92d2dd.jfif', NULL, NULL, NULL, '2026-05-05 21:15:29'),
+(2, 'مكة المكرمة', 'غربية', 'مدينة دينية يقصدها المسلمون للحج', 'غرب المملكة', 'المسجد الحرام، الكعبة المشرفة', 'حج', 'الكعبة المشرفة، مسعى الصفا والمروة', '69ff1b6f38180.jfif', NULL, NULL, NULL, '2026-05-05 21:15:29'),
+(6, 'الشرقيه', 'شرقية', 'الشرقيه منطقه جميله للسياحه', '', 'بحر و منتجعات', 'السبحاه', 'كورنيش الخبر والواجهة البحرية', '69ff15efd2240.jfif', '69ff15efd25d1.jpg', '69ff15efd3bba.jfif', NULL, '2026-05-09 11:09:35');
 
 --
 -- Indexes for dumped tables
@@ -103,7 +101,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `regions`
 --
 ALTER TABLE `regions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
