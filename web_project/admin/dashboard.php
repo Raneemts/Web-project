@@ -45,6 +45,7 @@ $regions = $conn->query("SELECT * FROM regions ORDER BY id ASC")->fetch_all(MYSQ
 <div class="admin-nav">
     <span class="admin-brand">لوحة تحكم المشرف</span>
     <div class="admin-nav-links">
+        <button onclick="toggleNight()" class="admin-nav-link" id="nightBtn">🌙 الوضع الليلي</button>
         <a href="../index.php" class="admin-nav-link">الصفحة الأولى</a>
         <a href="add.php" class="admin-nav-link admin-btn-add">إضافة جديد</a>
         <a href="logout.php" class="admin-nav-link admin-btn-logout">تسجيل الخروج</a>
