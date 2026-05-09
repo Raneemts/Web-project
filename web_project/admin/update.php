@@ -134,7 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
 
         <div class="form-group">
-            <label>الصورة الرئيسية (اتركها فارغة للإبقاء على الحالية)</label>
+            <label>الصورة الرئيسية</label>
             <?php if ($region['main_image']): ?>
                 <img src="../uploads/<?= htmlspecialchars($region['main_image']) ?>" 
                      style="height:80px; border-radius:6px; margin-bottom:8px; display:block">
