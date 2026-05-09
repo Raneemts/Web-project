@@ -48,13 +48,13 @@ if (!$region) {
         <h2>معلومات سريعة</h2>
         <ul style="margin-top:10px; line-height:2.2">
             <?php if ($region['location']): ?>
-                <li>📍 الموقع: <?= htmlspecialchars($region['location']) ?></li>
+                <li>الموقع: <?= htmlspecialchars($region['location']) ?></li>
             <?php endif; ?>
             <?php if ($region['features']): ?>
-                <li>✨ المميزات: <?= htmlspecialchars($region['features']) ?></li>
+                <li>المميزات: <?= htmlspecialchars($region['features']) ?></li>
             <?php endif; ?>
             <?php if ($region['activities']): ?>
-                <li>🎯 الأنشطة: <?= htmlspecialchars($region['activities']) ?></li>
+                <li>الأنشطة: <?= htmlspecialchars($region['activities']) ?></li>
             <?php endif; ?>
         </ul>
     </div>
@@ -65,7 +65,7 @@ if (!$region) {
         <h2>أبرز المعالم</h2>
         <ul style="margin-top:10px; line-height:2.2">
             <?php foreach (explode('،', $region['landmarks']) as $lm): ?>
-                <li>🏛️ <?= htmlspecialchars(trim($lm)) ?></li>
+                <li> <?= htmlspecialchars(trim($lm)) ?></li>
             <?php endforeach; ?>
         </ul>
     </div>
