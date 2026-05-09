@@ -9,7 +9,7 @@ $stmt->execute();
 $region = $stmt->get_result()->fetch_assoc();
 if (!$region) die('السجل غير موجود');
 
-//  هذا السطر هو الإصلاح
+
 $data = $region;
 $error = '';
 
@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         );
         $stmt->execute();
 
-        // بعد التحديث، حدّث $data بالبيانات الجديدة
+
         $data = $_POST;
         $data['name'] = $name;
 
@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: dashboard.php');
         exit();
     }
-    // عند وجود خطأ، استخدم POST
+    
     $data = $_POST;
 }
 ?>
