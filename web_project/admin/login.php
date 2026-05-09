@@ -42,10 +42,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body class="login-page-bg">
 
 <nav class="admin-nav">
+    <button onclick="toggleNight()" class="admin-nav-link" id="nightBtn">🌙 الوضع الليلي</button>
     <span>لوحة المشرف</span>
     <div>
         <a href="../index.php">زيارة الموقع</a>
-        <a href="../index.php">الصفحة الأولى</a>
     </div>
 </nav>
 
@@ -72,6 +72,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
     </div>
 </div>
-
+<script src="../js/main.js"></script>
 </body>
 </html>
