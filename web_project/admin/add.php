@@ -60,6 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <nav class="admin-nav">
     <span>لوحة تحكم المشرف</span>
     <div>
+        <button onclick="toggleNight()" class="admin-nav-link" id="nightBtn">🌙 الوضع الليلي</button>
         <a href="dashboard.php">لوحة التحكم</a>
         <a href="../index.php">الصفحة الأولى</a>
         <a href="logout.php" class="btn-logout-nav">تسجيل الخروج</a>
